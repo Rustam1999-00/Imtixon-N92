@@ -1,0 +1,155 @@
+
+.Shop_content{ 
+    
+    
+    padding-bottom: 200px;
+    background-image: url('../../assets/images/single1BG.png'),url('../../assets/images/single1BG2.png');
+    background-repeat: no-repeat,no-repeat;
+    background-size: 225px 302px,500px 450px;
+    background-position:right center,right bottom;
+}
+.Box{
+    padding-bottom: 200px;
+    background-image: url('../../assets/images/single1BG2.png');
+    background-repeat: no-repeat;
+    background-size: 700px 450px;
+    background-position:right center;
+  
+}
+
+.Actives {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #53B175;
+    text-decoration: none;
+    border: none;
+}
+
+.NoActives {
+    margin: 0;
+    /* margin-right: 26px; */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    opacity: 0.4;
+    text-decoration: none;
+}
+
+.logOutlink {
+
+    margin-left: auto;
+    padding: 8px 18px;
+    background: #E2F0E8;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    color: #181725;
+}
+
+.Addshpping {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: #282938;
+}
+
+.counds {
+    padding: 24px 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 25px 50px 5px #F6F7FF;
+    border-radius: 25px;
+}
+
+.cards_text {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #505050;
+}
+
+.cards_title {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #000000;
+}
+
+.cards_btn {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 16px;
+    padding: 10px 85px;
+    border: none;
+    background: #53B175;
+    border-radius: 30px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 24px;
+    color: #FFFFFF;
+
+}
+
+.cards_btn2 {
+    display: block;
+    margin-bottom: 16px;
+    padding: 10px 82px;
+    border: none;
+    background: rgba(83, 177, 117, 0.1);
+    border-radius: 30px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    color: #181725;
+
+}
+
+.counst {
+    margin: 0;
+    padding: 11px 14px;
+    border: 1px solid #E2E2E2;
+    border-radius: 13px;
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 18px;
+display: flex;
+align-items: center;
+color: #181725;
+}
+.contents{
+    height: 350px;
+
+}
+.count_btnDel{
+    background: none;
+    border: none;
+    font-size: 28px;
+}
+.count_btnAdd{
+    background: none;
+    border: none;
+    font-size: 25px;
+}

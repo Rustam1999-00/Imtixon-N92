@@ -1,0 +1,113 @@
+ 
+ .nav_page2{
+    margin-top: 71px;
+    background-image:url('../../assets/images/single1BG.png');
+    background-repeat:no-repeat;
+    background-size:500px 450px;
+    background-position:right bottom;
+ }
+ .nav_page3{
+    background-image: url('../../assets/images/single1BG2.png');
+    background-repeat: no-repeat;
+    background-size: 500px 450px;
+    background-position:right bottom;
+    padding-bottom: 200px;
+ }
+ 
+ 
+ 
+ .Actives {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #53B175;
+    text-decoration: none;
+    border: none;
+}
+
+.NoActives {
+    margin: 0;
+    /* margin-right: 26px; */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    opacity: 0.4;
+    text-decoration: none;
+}
+.loveDori{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 36px;
+color: #282938;
+}
+
+.addCard{
+    margin-bottom: 20px;
+    padding: 21px 43px;
+
+    border: 1px solid #E2E2E2;
+border-radius: 18px;
+}
+/* ============================ */
+.Eltitle{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+color: #181725;
+}
+.eltext{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #7C7C7C;
+}
+.elskitka{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration-line: line-through;
+    color: #808080;
+}
+.elprise{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: #53B175;
+}
+.Artwork{
+    ont-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 34px;
+text-align: center;
+    color: #B0B7C3;
+}
+.Artwork_text{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 18px;
+display: flex;
+align-items: center;
+text-align: center;
+color: #B0B7C3;
+}
+.Add_img:active{
+    background-color: rgb(84, 252, 28);
+}

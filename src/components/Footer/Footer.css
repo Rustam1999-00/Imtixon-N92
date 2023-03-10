@@ -1,0 +1,56 @@
+.site-footer {
+    padding: 40px 0 0;
+    background: #282828;
+    background-image: url('../../assets/images/FotterBg.svg');
+    background-repeat: no-repeat;
+    background-size: 680px 127px;
+    background-position: calc(50% + 500px) 310px;
+  }
+  
+  
+  .footer-logo {
+    text-decoration: none;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    color: #FFFFFF;
+  }
+  
+  .footer-text {
+    margin-bottom: 18px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #FFFFFF;
+    opacity: 0.8;
+  }
+  
+  .footer-textt {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #F4F5F7;
+  }
+  
+  .footer-box {
+    margin-top: 62px;
+    border-radius: 25px 25px 0px 0px;
+  }
+  
+  .footer-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 85px 18px 37px;
+    list-style-type: none;
+  }
+  
+  .footer-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+    color: #282938;
+    text-decoration: none;
+  }

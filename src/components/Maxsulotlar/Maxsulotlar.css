@@ -1,0 +1,121 @@
+.Maxsulotlarwrap {
+    width: 1319px;
+    margin: 0 auto;
+    margin-top: 48px;
+    padding: 20px;
+    background-image: url('../../assets/images/single1BG.png'),url('../../assets/images/single1BG2.png');
+    background-repeat: no-repeat,no-repeat;
+    background-size: 225px 302px,500px 450px;
+    background-position: top left,right bottom;
+
+}
+
+.Actives {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #53B175;
+    text-decoration: none;
+    border: none;
+}
+
+.NoActives {
+    margin: 0;
+    /* margin-right: 26px; */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    opacity: 0.4;
+    text-decoration: none;
+}
+
+.search_form {
+    margin: 20px 0;
+    width: 200px;
+    padding: 11px 15px;
+    background: rgba(236, 238, 242, 0.4);
+    border-radius: 100px;
+}
+
+.WrapperCategory {
+    width: 300px;
+    height: 450px;
+    padding: 20px;
+    background: #FFFFFF;
+    box-shadow: 0px 15px 60px rgba(22, 22, 22, 0.1);
+    border-radius: 15px;
+}
+
+.WrapperCategorytop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.kategoryTitle {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+}
+
+.kategoryButton {
+
+    background: none;
+    border: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-decoration-line: underline;
+    text-transform: capitalize;
+    color: #B0B7C3;
+}
+.Item_Text{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: #000000;
+}
+.chekInput{
+    width: 16px;
+    height: 16px;
+    background: #B0B7C3;
+}
+.chekInput:active{
+    background: #B0B7C3;
+}
+.WrapperFilterCard{
+    display: flex;
+    gap: 50px;
+}
+.Phone{
+    position: absolute;
+    top: 700px;
+    right: 150px;
+}
+.Message{
+    position: absolute;
+    top: 790px;
+    right: 150px;
+}
+/* .Add_img:hover{
+    background-color: red;
+} */
+.Add_img:active{
+    background-color: rgb(84, 252, 28);
+}
+.Add_like:active{
+    background-color: red;
+    border-radius: 50px;
+}
