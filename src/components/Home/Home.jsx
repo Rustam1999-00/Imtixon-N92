@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import Header from '../Header/Header'
 import Groupimg from '../../assets/images/Group 2534947 (1).jpg'
 import After from '../../assets/images/consultant.jpg'
@@ -33,21 +33,27 @@ import "./Home.css"
 // =======================
 
 import { useDispatch, useSelector } from 'react-redux';
-import { cardAdd, cardDel, shoppingAdd } from '../../store/cardSlise/cardSlise'
+import { cardAdd, cardDel, shoppingAdd, cardMadal, madalAdd, madalDel } from '../../store/cardSlise/cardSlise'
 import { Footer } from '../Footer/Footer'
 
 
 const Home = () => {
+
+    const navigate = useNavigate()
     const dispetch = useDispatch();
     const { count } = useSelector((state) => state.card);
     const { card } = useSelector((state) => state.card)
+    const { madal } = useSelector((state) => state.card)
     console.log(card);
     // =================
 
     const singleRef = useRef()
     // console.log(singleRef.current.className);
     const hendleNan = () => {
+
+
         singleRef.current.className = 'd-none'
+        navigate('/')
     }
     const hendleOpen = () => {
         singleRef.current.className = 'mt-5 shadow p-4 rounded-4 single1 d-block'
@@ -87,7 +93,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="xizmatlar">
-                    <Link to={'/'}>
+                    <Link to={'/sf'}>
                         <img src={Icon2} width='70' height='70' alt="icons" />
                     </Link>
                     <div className="ms-3">
@@ -96,7 +102,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="xizmatlar">
-                    <Link to={'/'}>
+                    <Link to={'/fbd'}>
                         <img src={Icon3} width='70' height='70' alt="icons" />
                     </Link>
                     <div className="ms-3">
@@ -105,7 +111,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="xizmatlar">
-                    <Link to={'/'}>
+                    <Link to={'/fbd'}>
                         <img src={Icon4} width='70' height='70' alt="icons" />
                     </Link>
                     <div className="ms-3">
@@ -142,78 +148,94 @@ const Home = () => {
                                             <s className='card_p'>{el.skitka}</s>
                                             <h2 className='card_tite'>{el.prise}uzs</h2>
                                         </div>
-                                        <button  onClick={() => dispetch(shoppingAdd({ id: el.id }))} className='btnse border-0'>
+                                        <button onClick={() => dispetch(shoppingAdd({ id: el.id }))} className='btnse border-0'>
                                             <img className='d-inline' src={buttonImg} width={'45'} height={'45'} alt="buttonImg" />
                                         </button>
                                     </div>
-                                    <Link onClick={hendleOpen} className='text-decoration-none' to={'/'}>
-                                        <span className='card_span'>Tafsilotlar <img src={VectorRight} width={'5'} height={'11'} alt="" /></span>
-                                    </Link>
+                                    <button onClick={hendleOpen} type='button' className='border-0 bg-transparent' >
+                                        <span onClick={() => dispetch(cardMadal(el.id))} className='card_span'>Tafsilotlar <img src={VectorRight} width={'5'} height={'11'} alt="" /></span>
+                                    </button>
                                 </div>
                             </div>
                         )
                     }
                 </div>
 
-                <div ref={singleRef} className=" mt-5 shadow p-4 single1 d-none">
-                    <button onClick={hendleNan} className='rounded-pill border-0 d-block ms-auto   px-2'> x</button>
-                    <div className="d-flex gap-5">
-                        <div className=" ms-5 ps-5 d-flex">
-                            <div className="">
-                                <img className='d-block' src={Dsipop2} width={'82'} height='80' alt="dori" />
-                                <img src={Dsipop2} width={'82'} height='80' alt="dori" />
 
-                            </div>
-                            <img className='mt-4' src={Dsipop2} width={'271'} height='270' alt="dori" />
 
-                        </div>
+                <div ref={singleRef} className="mt-5 shadow p-4 single1 d-none">
+                    <button onClick={hendleNan} type='button' className='rounded-pill border-0 d-block ms-auto   px-2'> x</button>
 
-                        <div className="sibgle_content w-50 ">
-                            <h2 className='singleTitle'>Rastaropsha MAX</h2>
-                            <span>  <img src={Star} width={'20'} height='20' alt="star" /></span>
-                            <span>  <img src={Star} width={'20'} height='20' alt="star" /></span>
-                            <span>  <img src={Star} width={'20'} height='20' alt="star" /></span>
-                            <span>  <img src={Star} width={'20'} height='20' alt="star" /></span>
-                            <span>  <img src={Star} width={'20'} height='20' alt="star" /></span>
-                            <span> 47</span>
-                            <div className="d-flex mt-4 mb-4">
-                                <button className='border-0 bg-transparent fs-2 me-2 ' onClick={() => dispetch(cardDel())} >-</button>
-                                <h2 className='border p-3 px-4 rounded-4'>{count}</h2>
-                                <button className='border-0 bg-transparent fs-2 ms-2 ' onClick={() => dispetch(cardAdd())}>+</button>
-                                <h2 className='card_tite ms-auto'>1600uzs</h2>
-                            </div>
-                            <hr />
-                            {/* ============= */}
-                            <div class="accordion accordion-flush" id="accordionFlushExample">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingOne">
-                                        <button class="accordion-button collapsed fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                            Mahsulot haqida
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                    {
+                        madal.length ?
+
+                            madal.map((el) =>
+                                <div className="">
+                                    <div className="d-flex gap-5">
+                                        <div className=" ms-5 ps-5 d-flex">
+                                            <div className="">
+                                                <img className='d-block' src={el[0].img} width={'82'} height='80' alt="dori" />
+                                                <img src={el[0].img} width={'82'} height='80' alt="dori" />
+
+                                            </div>
+                                            <img className='mt-4' src={el[0].img} width={'271'} height='270' alt="dori" />
+
+                                        </div>
+
+                                        <div className="sibgle_content w-50 ">
+                                            <h2 className='singleTitle'>{el[0].title}</h2>
+                                            <span>  <img src={Star} width={'20'} height='20' alt="star" /></span>
+                                            <span>  <img src={Star} width={'20'} height='20' alt="star" /></span>
+                                            <span>  <img src={Star} width={'20'} height='20' alt="star" /></span>
+                                            <span>  <img src={Star} width={'20'} height='20' alt="star" /></span>
+                                            <span>  <img src={Star} width={'20'} height='20' alt="star" /></span>
+                                            <span> 47</span>
+                                            <div className="d-flex mt-4 mb-4">
+                                                <button className='border-0 bg-transparent fs-2 me-2 ' onClick={() => dispetch(madalDel(el[0].id))} >-</button>
+                                                <h2 className='border p-3 px-4 rounded-4'>{el[0].count}</h2>
+                                                <button className='border-0 bg-transparent fs-2 ms-2 ' onClick={() => dispetch(madalAdd(el[0].id))}>+</button>
+                                                <h2 className='card_tite ms-auto'>{el[0].prise}uzs</h2>
+                                            </div>
+                                            <hr />
+                                            {/* ============= */}
+                                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="flush-headingOne">
+                                                        <button class="accordion-button collapsed fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                            Mahsulot haqida
+                                                        </button>
+                                                    </h2>
+                                                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {/* ================== */}
+                                            <hr />
+                                            <div className="d-flex align-items-center justify-content-between">
+                                                <h3 className='fs-5'>Og’irligi</h3>
+                                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOnes" aria-expanded="false" aria-controls="flush-collapseOnes">
+                                                        100gr
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            {/* ================== */}
-                            <hr />
-                            <div className="d-flex align-items-center justify-content-between">
-                                <h3 className='fs-5'>Og’irligi</h3>
-                                <div class="accordion accordion-flush" id="accordionFlushExample">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOnes" aria-expanded="false" aria-controls="flush-collapseOnes">
-                                        100gr
+                                    <button onClick={() => dispetch(shoppingAdd({ id: el[0].id }))}  type='button' className='Login_bottom2'>
+                                        Savatga qo'shish
                                     </button>
                                 </div>
-                            </div>
 
-                        </div>
-                    </div>
-                    <button type='submit' className='Login_bottom2'>
-                        Savatga qo'shish
-                    </button>
+                            )
+
+                            : ''
+                    }
+
 
                 </div>
+
 
                 {/* ============== */}
                 <div className=" cards_button">
@@ -339,22 +361,41 @@ const Home = () => {
 
             <ul className='List'>
                 <li className='Item'>
+                  
+                    <a href="https://grandpharm.uz/">
+
                     <img src={GravdFarm} width='218' height={'50'} alt="Logos" />
+                    </a>
                 </li>
                 <li className='Item'>
+                    <a href="https://asklepiy.uz/">
+
                     <img src={ASIKLEPI} width='163' height={'40'} alt="Logos" />
+                    </a>
                 </li>
                 <li className='Item'>
+                    <a href="https://doridarmon.uz/">
+
                     <img src={DORI} width='105' height={'73'} alt="Logos" />
+                    </a>
                 </li>
                 <li className='Item'>
+                    <a href="https://nikapharm.uz/">
+
                     <img src={NIKPHARM} width='163' height={'40'} alt="Logos" />
+                    </a>
                 </li>
                 <li className='Item'>
+                    <a href="https://lahisam.uz/">
+
                     <img src={Laxisam} width='149' height={'50'} alt="Logos" />
+                    </a>
                 </li>
                 <li className='Item'>
+                    <a href="https://arzonapteka.uz/ru/org/4723">
+
                     <img src={JAYXUN} width='124' height={'54'} alt="Logos" />
+                    </a>
                 </li>
             </ul>
 

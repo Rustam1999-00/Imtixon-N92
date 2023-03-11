@@ -10,7 +10,7 @@ import Phone from "../../assets/images/Phone.svg"
 import Message from "../../assets/images/Message.svg"
 import Pustoybox from "../../assets/images/Pustoybox.png"
 import Artwork from "../../assets/images/Artwork.svg"
-import cardDelete, { shoppingAdd }  from '../../store/cardSlise/cardSlise'
+import  { shoppingAdd,cardDelete2}  from '../../store/cardSlise/cardSlise'
 import { Footer } from '../Footer/Footer'
 
 
@@ -18,6 +18,11 @@ import { Footer } from '../Footer/Footer'
 const Loves = () => {
   const dispetch = useDispatch()
   const { cardAd } = useSelector((state) => state.card)
+
+  const likeDel =(Id)=>{
+    const topDel = cardAd.filter(el => el[0].id !== Id)
+    dispetch(cardDelete2(topDel))
+  }
 
   if (cardAd.length) {
 
@@ -55,7 +60,7 @@ const Loves = () => {
                     <s className='elskitka'>{el[0].skitka}</s>
                     <h2 className='elprise'>{el[0].prise} uzs</h2>
                   </div>
-                  <button onClick={()=>dispetch(cardDelete({id:el[0].id}))} className='border-0 bg-transparent'>
+                  <button onClick={()=>likeDel(el[0].id)} className='border-0 bg-transparent'>
                     <img src={Delete} width='16' height={'18'} alt="AddDorilar" />
 
                   </button>

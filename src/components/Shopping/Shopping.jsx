@@ -19,40 +19,40 @@ const Shopping = () => {
   const navigaet = useNavigate()
   const dispatch = useDispatch()
   const { shopping } = useSelector((state) => state.card)
-  
-  
+  const { demo } = useSelector((state) => state.card)
+
+
 
 
 
   const { count } = useSelector((state) => state.card)
   const { cardAd } = useSelector((state) => state.card)
 
- 
 
 
+
+  const AddDell = (Id) => {
+    const AddCount = shopping.find((el) => el[0].id !== Id)
+    //  dispatch(cardDel(AddCount))
+    // const Ade = AddCount.find(el=>el.count)
+    //  Ade.count += 2
+    dispatch(cardDel(AddCount[0].count))
+    console.log(AddCount[0].count);
+    console.log('salom');
+  }
   if (shopping.length) {
-    const arrey = shopping.map((el) => el[0].prise)
+    const arrey = shopping.map((el) => el[0].prise * el[0].count)
     var counts = arrey.reduce((acc, cur) => acc + cur)
     const bcecounts = counts + 1500
     // console.log(shopping);
 
     const hendleDel = (Id) => {
-      // const topDel = shopping.filter((el) => el.id !== Id)
-
-      const topDel = shopping.filter(el=>el[0].id !== Id)
+      const topDel = shopping.filter(el => el[0].id !== Id)
       console.log(topDel);
       dispatch(cardDelete(topDel))
-  
+
     }
 
-    const AddDell =(Id)=>{
-      const AddCount = shopping.find((el)=>el[0].id === Id)
-    //  dispatch(cardDel(AddCount))
-    const Ade = AddCount.find(el=>el.count)
-
-    console.log(Ade);
-      console.log('salom');
-    }
 
 
     return (
@@ -70,7 +70,7 @@ const Shopping = () => {
             <img className='ms-3' src={VectorRight2} width='15' height={'11'} alt="vektor" />
           </NavLink>
         </div>
-
+        {/* { demo.map((el)=><p>{el.count}</p>)} */}
 
         <div className="Shop_content">
           <div className=" d-flex gap-4 mt-5">
@@ -84,9 +84,9 @@ const Shopping = () => {
                       <p className='eltext'>{el[0].trues}</p>
                     </div>
                     <div className="d-flex">
-                      <button onClick={ ()=>AddDell(el[0].id)} className='count_btnDel'>-</button>
+                      <button onClick={() => dispatch(cardDel(el[0].id))} className='count_btnDel'>-</button>
                       <h3 className='counst'>{el[0].count}</h3>
-                      <button onClick={() => dispatch(cardAdd())} className='count_btnAdd'>+</button>
+                      <button onClick={() => dispatch(cardAdd(el[0].id))} className='count_btnAdd'>+</button>
 
                     </div>
                     <div className="">
@@ -94,7 +94,7 @@ const Shopping = () => {
                       <h2 className='elprise'>{el[0].prise} uzs</h2>
                     </div>
                     {/* () => dispatch(cardDelete({id:el[0].id})) */}
-                    <button onClick={()=>hendleDel(el[0].id)} type='button' className='border-0 bg-transparent'>
+                    <button onClick={() => hendleDel(el[0].id)} type='button' className='border-0 bg-transparent'>
                       <img src={Delete} width='16' height={'18'} alt="AddDorilar" />
 
                     </button>
@@ -140,7 +140,7 @@ const Shopping = () => {
           {/* ================ */}
         </div>
 
-<Footer/>
+        <Footer />
       </div>
     )
   }
@@ -175,7 +175,7 @@ const Shopping = () => {
 
 
         {/* ================ */}
-        <Footer/>
+        <Footer />
       </div>
     )
   }

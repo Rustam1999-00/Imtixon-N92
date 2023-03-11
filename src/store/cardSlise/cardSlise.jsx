@@ -13,6 +13,7 @@ const cardSlise = createSlice({
     initialState:
     {
         count: 2,
+        madal: [],
         tavars: [],
         cardAd: [],
         shopping: [],
@@ -76,23 +77,29 @@ const cardSlise = createSlice({
     }
     ,
     reducers: {
+
+        cardMadal(state, action) {
+            const modalFilter = state.card.filter((el) => el.id === action.payload)
+
+            state.madal.push(modalFilter)
+        },
+        madalAdd(state, action) {
+            state.madal.find((el) => el[0].id === action.payload ? el[0].count += 1 : '')
+        },
+        madalDel(state, action) {
+            state.madal.find((el) => el[0].id === action.payload ? el[0].count -= 1 : '')
+        },
+
         cardAdd(state, action) {
             state.count += 1
+            state.shopping.find((el) => el[0].id === action.payload ? el[0].count += 1 : '')
         },
-        cardDel(state, action) {
+        cardDel: (state, action) => {
             state.count -= 1
-            const asd = action.payload.find((el) => +el.count)
-            // if(asd){
-            //     asd.count += 1
-            // }
-            // const findedItem = state.shopping.find(item => item.id)
-            // findedItem.count += 1
+            state.shopping.find((el) => el[0].id === action.payload ? el[0].count -= 1 : '')
 
-            console.log(asd.count += 2);
 
-            console.log('salom');
 
-            // console.log(AdcardOpen.map((el)=>el.count));
         },
         cardFilter(state, action) {
 
@@ -105,7 +112,6 @@ const cardSlise = createSlice({
             const Filterad = state.card.filter((fil) => fil.title === 'Organic Bananas')
             const Choy = Filterad.flat()
             state.tavars.push(Choy)
-
 
         },
         cardAsal(state, action) {
@@ -131,26 +137,24 @@ const cardSlise = createSlice({
         },
         shoppingAdd: (state, action) => {
             const Addshopping = state.card.filter((Add) => Add.id === action.payload.id)
-            // const ShoppingOpen = state.shopping.findIndex(el => {return el.id === action.payload.id})
-            // if(ShoppingOpen == -1){
-            //     state.shopping = [...state.shopping,Addshopping]
-            // }
-            // console.log(ShoppingOpen);
+
             state.shopping.push(Addshopping)
 
-            // console.log( state.shopping.push(ShoppingOpen));
 
         },
         cardDelete: (state, action) => {
-            // state.shopping = state.shopping.filter((el) => el.id !== action.payload.id)
             state.shopping = action.payload
             console.log(state.shopping)
             console.log(action.payload);
+        },
+        cardDelete2: (state, action) => {
+            state.cardAd = action.payload
+         
         },
 
     }
 });
 
 
-export const { cardAdd, cardDel, cardFilter, cardChoy, cardYog, cardLike, cardDelete, shoppingAdd, cardAsal } = cardSlise.actions;
+export const { cardAdd, cardDel, cardFilter, cardChoy, cardYog, cardLike, cardDelete, shoppingAdd, cardAsal, cardMadal,madalAdd,madalDel,cardDelete2 } = cardSlise.actions;
 export default cardSlise.reducer; 
