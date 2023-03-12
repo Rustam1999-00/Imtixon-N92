@@ -159,7 +159,7 @@ const Maxsulotlar = () => {
                           </button>
                         </div>
                         <button onClick={hendleOpen} className='bg-transparent border-0'>
-                          <span className='card_span'>Tafsilotlar <img src={VectorRight} width={'5'} height={'11'} alt="" /></span>
+                          <span onClick={()=>dispeach(cardMadal(el[0].id))} className='card_span'>Tafsilotlar <img src={VectorRight} width={'5'} height={'11'} alt="" /></span>
                         </button>
                       </div>
                     </div>
