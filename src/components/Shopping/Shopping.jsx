@@ -41,7 +41,7 @@ const Shopping = () => {
   if (shopping.length) {
     const arrey = shopping.map((el) => el[0].prise * el[0].count)
     var counts = arrey.reduce((acc, cur) => acc + cur)
-    const bcecounts = counts + 1500
+    const bcecounts = counts + 15000
     // console.log(shopping);
 
     const hendleDel = (Id) => {
@@ -120,7 +120,7 @@ const Shopping = () => {
               </div>
               <div className="d-flex align-items-center justify-content-between">
                 <h3 className='cards_text'>Yetkazib berish</h3>
-                <p className='cards_text'>1500</p>
+                <p className='cards_text'>15000</p>
               </div>
               <div className="d-flex align-items-center justify-content-between">
                 <h3 className='cards_title'>Umumiy</h3>

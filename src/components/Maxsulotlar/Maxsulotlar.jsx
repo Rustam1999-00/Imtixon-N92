@@ -214,7 +214,7 @@ const Maxsulotlar = () => {
         <img className='Message' src={Message} width='95' height={'99'} alt="Phone" />
         {/* ========================================== */}
 
-       <div ref={singleRef} className="mt-5 shadow p-4 single1 d-none">
+       <div ref={singleRef} className="mt-5 shadow p-4 single1  d-none">
                     <button onClick={hendleNan} type='button' className='rounded-pill border-0 d-block ms-auto   px-2'> x</button>
 
                     {

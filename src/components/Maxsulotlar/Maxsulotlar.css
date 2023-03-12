@@ -9,6 +9,14 @@
     background-position: top left,right bottom;
 
 }
+/* .single2{
+    position: absolute;
+    top:500px;
+    right: 0;
+    width: 1319px;
+    background-color:white;
+    z-index: 10;
+} */
 
 .Actives {
     font-family: 'Poppins';
