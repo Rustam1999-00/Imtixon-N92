@@ -104,8 +104,8 @@ const cardSlise = createSlice({
             state.shopping.find((el) => el[0].id === action.payload ? el[0].count += 1 : '')
         },
         cardDel: (state, action) => {
-            state.count -= 1
-            state.shopping.find((el) => el[0].id === action.payload ? el[0].count -= 1 : '')
+            state.count -= 1 
+            state.shopping.find((el) => el[0].id === action.payload && el[0].count >= 1 ? el[0].count -= 1 : '')
 
 
 
