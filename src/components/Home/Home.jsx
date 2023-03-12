@@ -33,7 +33,7 @@ import "./Home.css"
 // =======================
 
 import { useDispatch, useSelector } from 'react-redux';
-import { cardAdd, cardDel, shoppingAdd, cardMadal, madalAdd, madalDel } from '../../store/cardSlise/cardSlise'
+import { cardAdd, cardDel, shoppingAdd,shoppingAdd2, cardMadal, madalAdd, madalDel } from '../../store/cardSlise/cardSlise'
 import { Footer } from '../Footer/Footer'
 
 
@@ -223,7 +223,7 @@ const Home = () => {
 
                                         </div>
                                     </div>
-                                    <button onClick={() => dispetch(shoppingAdd({ id: el[0].id }))}  type='button' className='Login_bottom2'>
+                                    <button onClick={() => dispetch(shoppingAdd2({ id: el[0].id }))}  type='button' className='Login_bottom2'>
                                         Savatga qo'shish
                                     </button>
                                 </div>

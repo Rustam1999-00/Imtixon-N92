@@ -33,9 +33,7 @@ const Shopping = () => {
 
   const AddDell = (Id) => {
     const AddCount = shopping.find((el) => el[0].id !== Id)
-    //  dispatch(cardDel(AddCount))
-    // const Ade = AddCount.find(el=>el.count)
-    //  Ade.count += 2
+   
     dispatch(cardDel(AddCount[0].count))
     console.log(AddCount[0].count);
     console.log('salom');

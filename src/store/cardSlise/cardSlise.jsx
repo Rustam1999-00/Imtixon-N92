@@ -7,7 +7,6 @@ import Dyog from "../../assets/images/Dyog.png"
 import Dsipop2 from "../../assets/images/Dsipop2.png"
 
 
-
 const cardSlise = createSlice({
     name: 'card',
     initialState:
@@ -77,11 +76,21 @@ const cardSlise = createSlice({
     }
     ,
     reducers: {
-
+        cardSearch(state,action){
+           
+            // const Choy = Filterad.flat()
+            const Filterad = state.card.filter((fil) => fil.title === action.payload)
+            if(Filterad){
+                state.tavars.push(Filterad)
+            }
+        
+            console.log(Filterad);
+        },
         cardMadal(state, action) {
             const modalFilter = state.card.filter((el) => el.id === action.payload)
 
-            state.madal.push(modalFilter)
+            // state.madal.push(modalFilter)
+            state.madal = [modalFilter]
         },
         madalAdd(state, action) {
             state.madal.find((el) => el[0].id === action.payload ? el[0].count += 1 : '')
@@ -111,34 +120,79 @@ const cardSlise = createSlice({
         cardChoy(state, action) {
             const Filterad = state.card.filter((fil) => fil.title === 'Organic Bananas')
             const Choy = Filterad.flat()
+            // const foundProdIndex = state.tavars.findIndex(item => {
+            //     return item[0].title === 'Organic Bananas'
+            // })
+            // if (foundProdIndex == -1) {
+            //     state.tavars = [...state.tavars, Choy]
+            // }
             state.tavars.push(Choy)
 
         },
         cardAsal(state, action) {
             const FilteradYog = state.card.filter((fil) => fil.title === 'ROHAT Yog`i №22')
             const asal = FilteradYog.flat()
-            state.tavars.push(asal)
+            const foundProdIndex = state.tavars.findIndex(item => {
+                return item[0].title === 'ROHAT Yog`i №22'
+            })
+            if (foundProdIndex == -1) {
+                state.tavars = [...state.tavars, asal]
+            }
+            // state.tavars.push(asal)
         },
         cardYog(state, action) {
 
             const FilteradYog = state.card.filter((fil) => fil.title === 'ROHAT Yog`i №2')
             const Choy = FilteradYog.flat()
-            state.tavars.push(Choy)
+            const foundProdIndex = state.tavars.findIndex(item => {
+                return item[0].title === 'ROHAT Yog`i №2'
+            })
+            if (foundProdIndex == -1) {
+                state.tavars = [...state.tavars, Choy]
+            }
+            // state.tavars.push(Choy)
         },
 
         // =========================
         cardLike(state, action) {
             const Addcard = state.card.filter((Add) => Add.id === action.payload.id)
 
-            const AdcardOpen = Addcard.flat()
-            state.cardAd.push(AdcardOpen)
+            // const AdcardOpen = Addcard.flat()
+
+            const foundProdIndex = state.cardAd.findIndex(item => {
+                return item[0].id === action.payload.id
+            })
+            if (foundProdIndex == -1) {
+                state.cardAd = [...state.cardAd, Addcard]
+            }
+            // state.cardAd = [...state.cardAd,AdcardOpen]
 
 
         },
         shoppingAdd: (state, action) => {
             const Addshopping = state.card.filter((Add) => Add.id === action.payload.id)
 
-            state.shopping.push(Addshopping)
+            const foundProdIndex = state.shopping.findIndex(item => {
+                return item[0].id === action.payload.id
+            })
+            if (foundProdIndex == -1) {
+                state.shopping = [...state.shopping, Addshopping]
+            }
+
+            // state.shopping = [Addshopping]
+
+
+        },
+        shoppingAdd2: (state, action) => {
+            const Addshopping = state.madal.find((Add) => Add[0].id === action.payload.id)
+
+            const foundProdIndex = state.shopping.findIndex(item => {
+                return item[0].id === action.payload.id
+            })
+            if (foundProdIndex == -1) {
+                state.shopping = [...state.shopping, Addshopping]
+            }
+
 
 
         },
@@ -149,12 +203,12 @@ const cardSlise = createSlice({
         },
         cardDelete2: (state, action) => {
             state.cardAd = action.payload
-         
+
         },
 
     }
 });
 
 
-export const { cardAdd, cardDel, cardFilter, cardChoy, cardYog, cardLike, cardDelete, shoppingAdd, cardAsal, cardMadal,madalAdd,madalDel,cardDelete2 } = cardSlise.actions;
+export const { cardAdd, cardDel, cardFilter, cardChoy, cardYog, cardLike, cardDelete, shoppingAdd, cardAsal, cardMadal, madalAdd, madalDel, cardDelete2, shoppingAdd2,cardSearch } = cardSlise.actions;
 export default cardSlise.reducer; 
