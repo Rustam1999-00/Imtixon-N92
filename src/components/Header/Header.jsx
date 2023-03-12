@@ -47,7 +47,7 @@ const Header = () => {
             <img src={fleg} width='22' height='16' alt='fleg' />
             <select className='select'>
                 <option hidden></option>
-                <option>UZB</option>
+                <option><img src={fleg} width='22' height='16' alt='fleg' /> UZB</option>
                 <option>RUS</option>
                 <option>ENG</option>
             </select>

@@ -19,7 +19,7 @@ const cardSlise = createSlice({
         card: [
             {
                 id: 1,
-                like: like,
+                like: true,
                 img: RohatYog,
                 title: 'ROHAT Yog`i №2',
                 trues: 'Mavjud',
@@ -30,7 +30,7 @@ const cardSlise = createSlice({
             },
             {
                 id: 2,
-                like: like,
+                like: true,
                 img: Dsirop,
                 title: 'Rohat Sirop',
                 trues: 'Erkaklar kuchi',
@@ -41,7 +41,7 @@ const cardSlise = createSlice({
             },
             {
                 id: 3,
-                like: like,
+                like: true,
                 img: Dtabletka,
                 title: 'Organic Bananas',
                 trues: '7pcs, Price',
@@ -52,7 +52,7 @@ const cardSlise = createSlice({
             },
             {
                 id: 4,
-                like: like,
+                like: true,
                 img: Dyog,
                 title: 'ROHAT Yog`i №22',
                 trues: 'Mavjud',
@@ -63,7 +63,7 @@ const cardSlise = createSlice({
             },
             {
                 id: 5,
-                like: like,
+                like: true,
                 img: Dsipop2,
                 title: 'Rohat Sirop',
                 trues: 'Rohat Sirop',
@@ -119,6 +119,8 @@ const cardSlise = createSlice({
         },
         cardChoy(state, action) {
             const Filterad = state.card.filter((fil) => fil.title === 'Organic Bananas')
+           
+
             const Choy = Filterad.flat()
             // const foundProdIndex = state.tavars.findIndex(item => {
             //     return item[0].title === 'Organic Bananas'
@@ -131,6 +133,7 @@ const cardSlise = createSlice({
         },
         cardAsal(state, action) {
             const FilteradYog = state.card.filter((fil) => fil.title === 'ROHAT Yog`i №22')
+            state.card.map((Add) => Add.title === 'ROHAT Yog`i №22' && Add.like ? Add.like = false : Add.like = true   )
             const asal = FilteradYog.flat()
             const foundProdIndex = state.tavars.findIndex(item => {
                 return item[0].title === 'ROHAT Yog`i №22'
@@ -143,6 +146,7 @@ const cardSlise = createSlice({
         cardYog(state, action) {
 
             const FilteradYog = state.card.filter((fil) => fil.title === 'ROHAT Yog`i №2')
+            
             const Choy = FilteradYog.flat()
             const foundProdIndex = state.tavars.findIndex(item => {
                 return item[0].title === 'ROHAT Yog`i №2'
@@ -156,8 +160,10 @@ const cardSlise = createSlice({
         // =========================
         cardLike(state, action) {
             const Addcard = state.card.filter((Add) => Add.id === action.payload.id)
-
-            // const AdcardOpen = Addcard.flat()
+            state.card.map((Add) => Add.id === action.payload.id && Add.like ? Add.like = false : Add.like = true   )
+            state.tavars.find((Add) => Add[0].id === action.payload.id && Add[0].like ? Add[0].like = false : Add[0].like = true   )
+            // state.card.map((Add) => Add.title === action.payload.id && Add.like ? Add.like = false : Add.like = true   )
+          
 
             const foundProdIndex = state.cardAd.findIndex(item => {
                 return item[0].id === action.payload.id
