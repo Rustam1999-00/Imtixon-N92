@@ -33,7 +33,7 @@ import "./Home.css"
 // =======================
 
 import { useDispatch, useSelector } from 'react-redux';
-import { cardAdd, cardDel, shoppingAdd,shoppingAdd2, cardMadal, madalAdd, madalDel } from '../../store/cardSlise/cardSlise'
+import { cardAdd, cardDel, shoppingAdd,shoppingAdd2, cardMadal, madalAdd, madalDel,cardLike } from '../../store/cardSlise/cardSlise'
 import { Footer } from '../Footer/Footer'
 
 
@@ -136,7 +136,7 @@ const Home = () => {
                     {
                         card.map((el) =>
                             <div className="card position-relative rounded-4" style={{ width: "240px" }}>
-                                <button className='LikeActive position-absolute border-0 bg-transparent' style={{ top: '15px', right: '13px' }}>
+                                <button onClick={() => dispetch(cardLike({ id: el.id }))}  className='LikeActive position-absolute border-0 bg-transparent' style={{ top: '15px', right: '13px' }}>
                                     <img className='LikeActive' src={like} width={'22'} height={'19'} alt="like" />
                                 </button>
                                 <img src={el.img} width='175' height='175' className="" alt="Maxsulotlar" />
