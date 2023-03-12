@@ -339,11 +339,11 @@ const Home = () => {
                         <label htmlFor="id">
                             <p className='form_text'>Telefon raqam</p>
                             <img src={Fleg} alt="tel" width='33' height='23' />
-                            <input className='form_input' type='number' id='id' placeholder='+998' />
+                            <input  className='form_input' type='number' id='id' placeholder='+998' defaultValue={"+998"} />
                         </label>
                         <hr />
                         <label htmlFor="id">
-                            <input className='form_input ' type='password' id='id' />
+                            <input className='form_input ' type='text' id='id' />
                             <button type='button' className='password_button rounded-pill border-0 bg-none'>
                             </button>
                         </label>

@@ -108,6 +108,7 @@ border-radius: 100%;
     background: #FFFFFF;
 box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 border-radius: 100px;
+text-decoration: none;
 }
 .shopping_Activ{
     margin-left: 6px;
@@ -116,4 +117,5 @@ border-radius: 100px;
     #53B175;
 box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 border-radius: 100px;
+text-decoration: none;
 }
