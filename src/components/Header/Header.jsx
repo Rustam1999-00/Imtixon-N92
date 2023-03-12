@@ -6,8 +6,11 @@ import people from '../../assets/images/people.svg'
 import Like from '../../assets/images/like.svg'
 import Korzinka from '../../assets/images/shopping-cart (1) 1.svg'
 import "./Header.css"
+import { useSelector } from 'react-redux'
 
 const Header = () => {
+    const { shopping } = useSelector((state) => state.card)
+    const { cardAd } = useSelector((state) => state.card)
     const navigaert = useNavigate()
     const logout=()=>{
         localStorage.removeItem('token')
@@ -74,9 +77,11 @@ const Header = () => {
         <div className=" ms-auto like_goup">
             <NavLink className={({ isActive }) => isActive ? 'shopping_Activ' : 'shopping'} to={'/Loves'}>
                 <img src={Like} width='16' height='14' alt='like' />
+                <sup className='supIndex'>{cardAd.length}</sup>
             </NavLink>
             <NavLink className={({ isActive }) => isActive ? 'shopping_Activ' : 'shopping'} to={'/Shopping'}>
                 <img src={Korzinka} width='18' height='18' alt='like' />
+                <sup className='supIndex'>{shopping.length}</sup>
             </NavLink>
         </div>
     </div>
