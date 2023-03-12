@@ -1,10 +1,17 @@
  
+
+ .livewrapper{
+    width: 1359px;
+    margin: 0 auto;
+    position: relative;
+ }
  .nav_page2{
     margin-top: 71px;
     background-image:url('../../assets/images/single1BG.png');
     background-repeat:no-repeat;
     background-size:500px 450px;
     background-position:right bottom;
+   
  }
  .nav_page3{
     background-image: url('../../assets/images/single1BG2.png');

@@ -2,6 +2,9 @@
     background: url('../../assets/images/bg-img.png');
     background-size: 100% 787px;
     background-repeat: no-repeat;
+    width: 1359px;
+    margin: 0 auto;
+    position: relative;
 
 }
 .LikeActive:active{
@@ -42,6 +45,7 @@
     text-align: center;
     color: #53B175;
     border-bottom: 1px solid #53B175;
+    text-decoration: none;
 }
 
 .Groupimg {

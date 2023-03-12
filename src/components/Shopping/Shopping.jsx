@@ -54,8 +54,10 @@ const Shopping = () => {
 
 
     return (
-      <div>
+    <>
         <Header />
+     <div className="wrappershop">
+       <div >
         <div className="ms-5 mt-5">
           <NavLink className={({ isActive }) => isActive ? 'Actives' : 'NoActives'} to={'/'}>Bosh sahifa</NavLink>
           <p className='d-inline p-0 m-0 mx-2'>/</p>
@@ -138,14 +140,17 @@ const Shopping = () => {
           {/* ================ */}
         </div>
 
-        <Footer />
       </div>
+     </div>
+     <Footer />
+    </>
     )
   }
   else {
     return (
-      <div>
+    <>
         <Header />
+      <div className="wrappershop">
         <div className="Box">
           <div className="ms-5 mt-5 ">
             <NavLink className={({ isActive }) => isActive ? 'Actives' : 'NoActives'} to={'/'}>Bosh sahifa</NavLink>
@@ -173,8 +178,9 @@ const Shopping = () => {
 
 
         {/* ================ */}
-        <Footer />
       </div>
+        <Footer />
+    </>
     )
   }
 }

@@ -71,7 +71,7 @@ const Home = () => {
                 </h1>
                 <p className='text'>
                     24/7 video maslahat. Shaxsiy maslahat + Audio qo'ng'iroq<br />
-                    Faqat<span className='text_span'> mobil ilovada</span>
+                    Faqat<a className='text_span '  href='https://play.google.com/store/games' target='_blank' > mobil ilovada</a>
                 </p>
             </div>
             <img className='Groupimg mx-auto' src={Groupimg} width='836' height='500' alt="doktor" />
