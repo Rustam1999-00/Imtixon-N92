@@ -161,7 +161,7 @@ const cardSlise = createSlice({
         cardLike(state, action) {
             const Addcard = state.card.filter((Add) => Add.id === action.payload.id)
             state.card.map((Add) => Add.id === action.payload.id && Add.like ? Add.like = false : Add.like = true   )
-            state.tavars.find((Add) => Add[0].id === action.payload.id && Add[0].like ? Add[0].like = false : Add[0].like = true   )
+            state.tavars.map((Add) => Add[0].id === action.payload.id && Add[0].like ? Add[0].like = false : Add[0].like = true   )
             // state.card.map((Add) => Add.title === action.payload.id && Add.like ? Add.like = false : Add.like = true   )
           
 

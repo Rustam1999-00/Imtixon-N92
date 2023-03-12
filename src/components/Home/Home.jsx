@@ -63,8 +63,8 @@ const Home = () => {
 
     return (
         <>
-            <Header />
             <div className="HomeWrapper">
+            <Header />
 
 
                 <div className="text-center Title_wrapper">

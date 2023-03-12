@@ -142,8 +142,8 @@ const Maxsulotlar = () => {
                 {
                   tavars.map((el) =>
                     <div className="card position-relative rounded-4" style={{ width: "240px" }}>
-                      <button onClick={() => dispeach(cardLike({ id: el[0].id }))} className='position-absolute border-0 bg-transparent' style={{ top: '15px', right: '13px' }}>
-                        <img className='Add_like' src={el[0].like ? like : QizilLike} width={'22'} height={'19'} alt="like" />
+                      <button onClick={() => dispeach(cardLike({id:el[0].id }))} className='position-absolute border-0 bg-transparent' style={{ top: '15px', right: '13px' }}>
+                        <img className='Add_like' src={el[0].like ? QizilLike : like} width={'22'} height={'19'} alt="like" />
                       </button>
                       <img src={el[0].img} width='175' height='175' className="" alt="Maxsulotlar" />
                       <div className="card-body">
